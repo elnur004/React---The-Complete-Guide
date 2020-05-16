@@ -7,7 +7,7 @@ function App() {
     <div className="App">
      <h1>Hi, I'm a React App</h1>
      <p>This is really working!</p>
-     <Person name="John" age="28"/>
+     <Person name="John" age="28">My hobbies: Racing</Person>
      <Person name="Jane" age="26"/>
      <Person name="Mike" age="29"/>
     </div>
