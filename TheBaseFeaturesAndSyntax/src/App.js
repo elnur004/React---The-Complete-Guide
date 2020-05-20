@@ -6,23 +6,23 @@ import Person from './Person/Person';
   const App = () => {
     const [ personsState, setPersonsState ] = useState({
     persons: [
-      { name = 'John', age = 28 },
-      { name = 'Jane', age = 26 },
-      { name = 'Mike', age = 29 }
+      { name: 'John', age: 28 },
+      { name: 'Jane', age: 26 },
+      { name: 'Mike', age: 29 }
     ]
     })
     
     const [otherState, setOtherState] = useState('somother value');
     
-    console.log(personsState);
+    console.log(personsState, otherState);
     
     const switchNameHandler = () => {
     // DON'T DO THIS: this.state.persons[0].name = 'Maximillian';
     setPersonsState({
       persons: [
-      { name = 'Bob', age = 28 },
-      { name = 'Jane', age = 26 },
-      { name = 'Mike', age = 27 }
+      { name: 'Bob', age: 28 },
+      { name: 'Jane', age: 26 },
+      { name: 'Mike', age: 27 }
     ]
     })
   }
