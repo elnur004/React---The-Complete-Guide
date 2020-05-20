@@ -9,9 +9,10 @@ import Person from './Person/Person';
       { name = 'John', age = 28 },
       { name = 'Jane', age = 26 },
       { name = 'Mike', age = 29 }
-    ],
-    otherState: 'some other value'
-  })
+    ]
+    })
+    
+    const [otherState, setOtherState] = useState('somother value');
     
     console.log(personsState);
     
@@ -22,8 +23,7 @@ import Person from './Person/Person';
       { name = 'Bob', age = 28 },
       { name = 'Jane', age = 26 },
       { name = 'Mike', age = 27 }
-    ],
-      otherState: personsState.otherState
+    ]
     })
   }
     
