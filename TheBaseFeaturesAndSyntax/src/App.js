@@ -63,7 +63,7 @@ export default App;
 //   switchNameHandler = () => {
 //     console.log('Was clicked!');
 //     // DON'T DO THIS: this.state.persons[0].name = 'Maximillian';
-//     setState({
+//     this.setState({
 //       persons: [
 //       { name: 'Bob', age: 28 },
 //       { name: 'Jane', age: 26 },
