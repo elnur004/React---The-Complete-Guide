@@ -16,11 +16,11 @@ import Person from './Person/Person';
     
     console.log(personsState, otherState);
     
-    const switchNameHandler = () => {
+    const switchNameHandler = (newName) => {
     // DON'T DO THIS: this.state.persons[0].name = 'Maximillian';
     setPersonsState({
       persons: [
-      { name: 'Bob', age: 28 },
+      { name: newName, age: 28 },
       { name: 'Jane', age: 26 },
       { name: 'Mike', age: 27 }
     ]
@@ -31,10 +31,18 @@ import Person from './Person/Person';
     <div className="App">
      <h1>Hi, I'm a React App</h1>
      <p>This is really working!</p>
-    <button onClick={switchNameHandler}>Switch Name</button>
-     <Person name={personsState.persons[0].name} age={personsState.persons[0].age}>My hobbies: Racing</Person>
-     <Person name={personsState.persons[1].name} age={personsState.persons[1].age}/>
-     <Person name={personsState.persons[2].name} age={personsState.persons[2].age}/>
+    <button onClick={this.switchNameHandler.bind(this, 'Max')}>Switch Name</button>  
+      //{/* onClick={() => this.switchNameHandler('Max!!!')}  THIS CAN BE INEFFICIENT(depending on the size of application) react can rerender certain things in app too often*/}
+     <Person 
+      name={personsState.persons[0].name} 
+      age={personsState.persons[0].age}
+      click={this.switchNameHandler.bind(this, 'Maximillian')}>My hobbies: Racing</Person>
+     <Person 
+      name={personsState.persons[1].name} 
+      age={personsState.persons[1].age}/>
+     <Person 
+      name={personsState.persons[2].name} 
+      age={personsState.persons[2].age}/>
     </div>
   );
   //return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?')); 
