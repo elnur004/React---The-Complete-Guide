@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
 
-// FUNCTIONAL COMPONENT
-  const App = () => {
-    const [ personsState, setPersonsState ] = useState({
+CLASS BASED COMPONENT
+class App extends Component {
+  state = {
     persons: [
       { name: 'John', age: 28 },
       { name: 'Jane', age: 26 },
       { name: 'Mike', age: 29 }
-    ]
-    })
-    
-    const [otherState, setOtherState] = useState('somother value');
-    
-    console.log(personsState, otherState);
-    
-    const switchNameHandler = (newName) => {
+    ],
+    otherState: 'some other value'
+  }
+
+  switchNameHandler = (newName) => {
+    console.log('Was clicked!');
     // DON'T DO THIS: this.state.persons[0].name = 'Maximillian';
-    setPersonsState({
+    this.setState({
       persons: [
       { name: newName, age: 28 },
       { name: 'Jane', age: 26 },
@@ -26,52 +24,57 @@ import Person from './Person/Person';
     ]
     })
   }
-    
+
+  render () {
   return (
     <div className="App">
      <h1>Hi, I'm a React App</h1>
      <p>This is really working!</p>
-    <button onClick={this.switchNameHandler.bind(this, 'Max')}>Switch Name</button>  
-      //{/* onClick={() => this.switchNameHandler('Max!!!')}  THIS CAN BE INEFFICIENT(depending on the size of application) react can rerender certain things in app too often*/}
+    <button onClick={this.switchNameHandler.bind(this, 'Max')}>Switch Name</button>        
+       // {/* ...onClick={() => this.switchNameHandler('Max!!!')}...  THIS CAN BE INEFFICIENT(depending on the size of 
+       // application) react can rerender certain things in app too often*/}
      <Person 
-      name={personsState.persons[0].name} 
-      age={personsState.persons[0].age}
+      name={this.state.persons[0].name} 
+      age={this.state.persons[0].age}
       click={this.switchNameHandler.bind(this, 'Maximillian')}>My hobbies: Racing</Person>
      <Person 
-      name={personsState.persons[1].name} 
-      age={personsState.persons[1].age}/>
+      name={this.state.persons[1].name} 
+      age={this.state.persons[1].age}/>
      <Person 
-      name={personsState.persons[2].name} 
-      age={personsState.persons[2].age}/>
+      name={this.state.persons[2].name} 
+      age={this.state.persons[2].age}/>
     </div>
   );
   //return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?')); 
   //return React.createElement(...) method gets compiled to JSX code behind the scenes. (even though we can't see that)
   }
- 
-
+}
 export default App;
 
 
-// import React, { Component } from 'react';
+
+
+// import React, { useState } from 'react';
 // import './App.css';
 // import Person from './Person/Person';
 
-// CLASS BASED COMPONENT
-// class App extends Component {
-//   state = {
+// // FUNCTIONAL COMPONENT
+//   const App = () => {
+//     const [ personsState, setPersonsState ] = useState({
 //     persons: [
 //       { name: 'John', age: 28 },
 //       { name: 'Jane', age: 26 },
 //       { name: 'Mike', age: 29 }
-//     ],
-//     otherState: 'some other value'
-//   }
-
-//   switchNameHandler = () => {
-//     console.log('Was clicked!');
+//     ]
+//     })
+    
+//     const [otherState, setOtherState] = useState('somother value');
+    
+//     console.log(personsState, otherState);
+    
+//     const switchNameHandler = () => {
 //     // DON'T DO THIS: this.state.persons[0].name = 'Maximillian';
-//     this.setState({
+//     setPersonsState({
 //       persons: [
 //       { name: 'Bob', age: 28 },
 //       { name: 'Jane', age: 26 },
@@ -79,20 +82,19 @@ export default App;
 //     ]
 //     })
 //   }
-
-//   render () {
+    
 //   return (
 //     <div className="App">
 //      <h1>Hi, I'm a React App</h1>
 //      <p>This is really working!</p>
-//     <button onClick={this.switchNameHandler}>Switch Name</button>
-//      <Person name={this.state.persons[0].name} age={this.state.persons[0].age}>My hobbies: Racing</Person>
-//      <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
-//      <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
+//     <button onClick={switchNameHandler}>Switch Name</button>
+//      <Person name={personsState.persons[0].name} age={personsState.persons[0].age}>My hobbies: Racing</Person>
+//      <Person name={personsState.persons[1].name} age={personsState.persons[1].age}/>
+//      <Person name={personsState.persons[2].name} age={personsState.persons[2].age}/>
 //     </div>
 //   );
 //   //return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?')); 
 //   //return React.createElement(...) method gets compiled to JSX code behind the scenes. (even though we can't see that)
 //   }
-// }
+ 
 // export default App;
