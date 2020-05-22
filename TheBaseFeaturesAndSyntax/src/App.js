@@ -56,7 +56,6 @@ export default App;
 //       { name: 'John', age: 28 },
 //       { name: 'Jane', age: 26 },
 //       { name: 'Mike', age: 29 }
-//     ]
 //     ],
 //     otherState: 'some other value'
 //   }
