@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
 
-CLASS BASED COMPONENT
+// CLASS BASED COMPONENT
 class App extends Component {
   state = {
     persons: [
