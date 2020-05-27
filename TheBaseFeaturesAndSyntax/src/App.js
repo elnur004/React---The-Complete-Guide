@@ -46,11 +46,21 @@ class App extends Component {
   }
 
   render () {
+    const style = {
+      backgroundColor: 'white',
+      font: 'inherit',
+      border: '1px solid blue',
+      padding: '8px',
+      cursor: 'pointer'
+    };
+    
   return (
     <div className="App">
      <h1>Hi, I'm a React App</h1>
      <p>This is really working!</p>
-    <button onClick={this.switchNameHandler.bind(this, 'Max')}>Switch Name</button>        
+    <button 
+      style={style}
+      onClick={this.switchNameHandler.bind(this, 'Max')}>Switch Name</button>        
        // {/* ...onClick={() => this.switchNameHandler('Max!!!')}...  THIS CAN BE INEFFICIENT(depending on the size of 
        // application) react can rerender certain things in app too often*/}
      <Person 
