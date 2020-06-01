@@ -1,9 +1,9 @@
 import React from 'react';
 
-const userOutput = () => {
+const userOutput = (props) => {
   return(
     <div>
-      <p>Something in this paragraph<p>
+      <p>{props.userName} is in this paragraph<p>
       <p>I hope i'll be overwritten!<p>
     <div>
   );
