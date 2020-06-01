@@ -3,6 +3,10 @@ import './App.css';
 import UserOutput from './UserOutput/UserOutput';
 
 class App extends Component {
+  state = {
+    userName: 'Elnur'
+  };
+  
   render() {
     return (
       <div className="App">
@@ -18,9 +22,9 @@ class App extends Component {
           <li>Add two-way-binding to your input (in UserInput) to also display the starting username</li>
           <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
         </ol>
-          <UserOutput userName="Elnur"/>
-          <UserOutput userName="Elnur"/>
-          <UserOutput userName="Elnur"/>
+          <UserOutput user={this.state.userName}/>
+          <UserOutput user={this.state.userName}/>
+          <UserOutput user={this.state.userName}/>
       </div>
     );
   }
