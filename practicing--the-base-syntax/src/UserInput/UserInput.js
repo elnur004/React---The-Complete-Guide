@@ -4,7 +4,7 @@ const userInput = () => {
   return (
     <div>
       <input type="text" />
-    <div>
+    </div>
   );
 };
 
