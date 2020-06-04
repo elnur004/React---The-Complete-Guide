@@ -6,6 +6,12 @@ class App extends Component {
   state = {
     userName: 'Elnur'
   };
+
+changeNameHandler = () => {
+  this.setState({
+    userName: 'Alina'
+  });
+}
   
   render() {
     return (
@@ -22,7 +28,8 @@ class App extends Component {
           <li>Add two-way-binding to your input (in UserInput) to also display the starting username</li>
           <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
         </ol>
-          <UserOutput user={this.state.userName}/>
+          <UserOutput user={this.state.userName}
+            click={this.changeNameHandler}/>
           <UserOutput user={this.state.userName}/>
           <UserOutput user={this.state.userName}/>
       </div>
